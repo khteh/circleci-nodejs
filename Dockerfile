@@ -1,4 +1,4 @@
-FROM node:20.2
+FROM node:20.7
 MAINTAINER Kok How, Teh <funcoolgeeek@gmail.com>
 RUN apt update -y
 RUN DEBIAN_FRONTEND=noninteractive apt install -y tzdata gnupg2 gnupg gnupg1
