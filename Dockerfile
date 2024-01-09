@@ -7,9 +7,9 @@ RUN ln -s /usr/share/zoneinfo/Asia/Singapore /etc/localtime
 RUN echo "Asia/Singapore" | tee /etc/timezone
 RUN dpkg-reconfigure --frontend noninteractive tzdata
 RUN apt install -y libimage-exiftool-perl software-properties-common redis-server sudo apt-transport-https git-lfs awscli libgtk-3-0 libgbm-dev libnotify-dev libgconf-2-4 libnss3 libxss1 libasound2 libxtst6 xauth xvfb  openssh-client git
-ENV DOCKER_CLIENT_VER 24.0.1
+ENV DOCKER_CLIENT_VER 24.0.7
 RUN curl -sL -o /tmp/docker-$DOCKER_CLIENT_VER.tgz https://download.docker.com/linux/static/stable/x86_64/docker-$DOCKER_CLIENT_VER.tgz
-ENV DOCKERIZE_VERSION v0.6.1
+ENV DOCKERIZE_VERSION v0.7.0
 RUN wget -q https://github.com/jwilder/dockerize/releases/download/$DOCKERIZE_VERSION/dockerize-linux-amd64-$DOCKERIZE_VERSION.tar.gz && tar -C /usr/local/bin -xzvf dockerize-linux-amd64-$DOCKERIZE_VERSION.tar.gz && rm dockerize-linux-amd64-$DOCKERIZE_VERSION.tar.gz
 RUN tar -xz -C /tmp -f /tmp/docker-$DOCKER_CLIENT_VER.tgz
 RUN mv /tmp/docker/* /usr/bin
