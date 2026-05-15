@@ -7,7 +7,7 @@ RUN rm -f /etc/localtime
 RUN ln -s /usr/share/zoneinfo/Asia/Singapore /etc/localtime
 RUN echo "Asia/Singapore" | tee /etc/timezone
 RUN dpkg-reconfigure --frontend noninteractive tzdata
-ENV DOCKER_CLIENT_VER=29.1.3
+ENV DOCKER_CLIENT_VER=29.5.0
 RUN curl -sL -o /tmp/docker-$DOCKER_CLIENT_VER.tgz https://download.docker.com/linux/static/stable/x86_64/docker-$DOCKER_CLIENT_VER.tgz
 RUN tar zxf /tmp/docker-$DOCKER_CLIENT_VER.tgz -C /tmp
 RUN mv /tmp/docker/* /usr/bin
